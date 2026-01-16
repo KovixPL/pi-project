@@ -1,0 +1,55 @@
+# depslib dependency file v1.0
+1768576783 source:c:\users\mateusz\desktop\projects\ksiegarnia\product.cpp
+	"Product.h"
+
+1768580814 c:\users\mateusz\desktop\projects\ksiegarnia\product.h
+	<string>
+
+1768557529 source:c:\users\mateusz\desktop\projects\ksiegarnia\main.cpp
+	<stdexcept>
+	<iostream>
+	"Product.h"
+	"AudioBook.h"
+	"EBook.h"
+	"PaperBook.h"
+	"LibraryMenager.h"
+
+1768581248 c:\users\mateusz\desktop\projects\ksiegarnia\audiobook.h
+	<string>
+	"product.h"
+
+1768580799 c:\users\mateusz\desktop\projects\ksiegarnia\ebook.h
+	<string>
+	"product.h"
+
+1768580795 c:\users\mateusz\desktop\projects\ksiegarnia\paperbook.h
+	<string>
+	"product.h"
+
+1768580521 c:\users\mateusz\desktop\projects\ksiegarnia\librarymenager.h
+	<vector>
+	<string>
+	<memory>
+	"Product.h"
+
+1768580661 source:c:\users\mateusz\desktop\projects\ksiegarnia\librarymenager.cpp
+	<fstream>
+	<iostream>
+	<vector>
+	<stdexcept>
+	<sstream>
+	<string>
+	"LibraryMenager.h"
+	"AudioBook.h"
+	"EBook.h"
+	"PaperBook.h"
+
+1768581340 source:c:\users\mateusz\desktop\projects\ksiegarnia\audiobook.cpp
+	"AudioBook.h"
+
+1768581355 source:c:\users\mateusz\desktop\projects\ksiegarnia\ebook.cpp
+	"EBook.h"
+
+1768581368 source:c:\users\mateusz\desktop\projects\ksiegarnia\paperbook.cpp
+	"PaperBook.h"
+
