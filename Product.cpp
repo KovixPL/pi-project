@@ -4,14 +4,15 @@ Product::Product(
     const int& id,
     const std::string& title,
     const std::string& author,
-    const Genre& genre,
     const float& price,
-    const int& amount) :
+    const int& amount,
+    const Genre& genre) :
     id(id),
     title(title),
     author(author),
     price(price),
-    amount(amount) {}
+    amount(amount),
+    genre(genre) {}
 
 void Product::sell() {
     amount--;

@@ -11,23 +11,28 @@ private:
 
 public:
     AudioBook(
-    const int& id,
-    const std::string& title,
-    const std::string& author,
-    const float& price,
-    const int& amount,
-    const Genre& genre,
-    const float& lengthHours,
-    const bool& hasMultipleNarrators,
-    const bool& isAiNarrated,
-    const bool& hasSoundEffects
-    ) : Product(id, title, author, genre, price, amount) {}
+        const int& id,
+        const std::string& title,
+        const std::string& author,
+        const float& price,
+        const int& amount,
+        const Genre& genre,
+        const float& lengthHours,
+        const bool& hasMultipleNarrators,
+        const bool& isAiNarrated,
+        const bool& hasSoundEffects
+    ) : Product(id, title, author, price, amount, genre),
+        lengthHours(lengthHours),
+        hasMultipleNarrators(hasMultipleNarrators),
+        isAiNarrated(isAiNarrated),
+        hasSoundEffects(hasSoundEffects) {}
+
 
     ~AudioBook() {}
 
     void compare(const Product& p) override;
 
-    std::string toString() override;
+    std::string toString() const override;
 
     float getLengthHours();
     bool getHasMultipleNarrators();

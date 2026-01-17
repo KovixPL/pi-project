@@ -1,5 +1,6 @@
 #include <stdexcept>
 #include <iostream>
+#include <windows.h>
 
 #include "Product.h"
 #include "AudioBook.h"
@@ -57,6 +58,8 @@ void handleStatsMenu() {
 int main()
 {
     try {
+        SetConsoleOutputCP(65001); // Ustawia wyjœcie konsoli na UTF-8
+        SetConsoleCP(65001);       // Ustawia wejœcie konsoli na UTF-8
         LibraryMenager menager(DB_FILE_PATH);
 
         while(true) {

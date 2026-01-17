@@ -1,5 +1,6 @@
 #include "AudioBook.h"
 #include "EnumConvert.h"
+#include "Utils.h"
 
 void AudioBook::compare(const Product& p) {
 }
@@ -20,7 +21,7 @@ bool AudioBook::getHasSoundEffects() {
     return hasSoundEffects;
 }
 
-std::string AudioBook::toString() {
+std::string AudioBook::toString() const {
     std::string narrators = hasMultipleNarrators ? "true" : "false";
     std::string ai = isAiNarrated ? "true" : "false";
     std::string sound = hasSoundEffects ? "true" : "false";
@@ -28,11 +29,11 @@ std::string AudioBook::toString() {
     return "A;" + std::to_string(id) + ";"
     + title + ";"
     + author + ";"
-    + std::to_string(price) + ";"
+    + Utils::getFloatWithPrecision(price, 2) + ";"
     + std::to_string(amount) + ";"
     + EnumConvert::genreToString(genre) + ";"
-    + std::to_string(lengthHours) + ";"
+    + Utils::getFloatWithPrecision(lengthHours, 2) + ";"
     + narrators + ";"
     + ai + ";"
-    + sound + ";";
+    + sound;
 }

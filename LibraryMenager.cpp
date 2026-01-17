@@ -10,6 +10,7 @@
 #include "EBook.h"
 #include "PaperBook.h"
 #include "EnumConvert.h"
+#include "HFuncs.h"
 
 std::vector<std::string> LibraryMenager::splitLine(const std::string& line, const char& delimiter) {
     std::vector<std::string> v;
@@ -127,6 +128,11 @@ LibraryMenager::LibraryMenager(const std::string& dbFile) {
         char bookType = bookInfo.front()[0];
         loadBookFromDb(bookType,bookInfo);
     }
+
+    for (Product* p : products) {
+        std::cout << p->toString() << std::endl;
+    }
+
     db.close();
 }
 

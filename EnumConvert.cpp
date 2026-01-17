@@ -1,4 +1,5 @@
 #include <stdexcept>
+#include <iostream>
 
 #include "EnumConvert.h"
 
@@ -39,8 +40,9 @@ std::string EnumConvert::genreToString(const Genre& genre) {
 
     case Genre::scienceFiction:
         return "scienceFiction";
-
     }
+    std::cout << genre << std::endl;
+    throw std::runtime_error("ERROR: INCORRECT GENRE.");
 }
 
 std::string EnumConvert::coverTypeToString(const CoverType& coverType) {
@@ -51,6 +53,7 @@ std::string EnumConvert::coverTypeToString(const CoverType& coverType) {
     case CoverType::paperBack:
         return "paperBack";
     }
+    throw std::runtime_error("ERROR: INCORRECT COVER TYPE.");
 }
 
 std::string EnumConvert::formatToString(const Format& format) {
@@ -61,6 +64,7 @@ std::string EnumConvert::formatToString(const Format& format) {
     case Format::PDF:
         return "PDF";
     }
+    throw std::runtime_error("ERROR: INCORRECT FORMAT.");
 }
 
 

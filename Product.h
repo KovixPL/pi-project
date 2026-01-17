@@ -17,16 +17,16 @@ public:
         const int& id,
         const std::string& title,
         const std::string& author,
-        const Genre& genre,
         const float& price,
-        const int& amount
+        const int& amount,
+        const Genre& genre
     );
 
     virtual ~Product() {}
 
     virtual void compare(const Product& p) = 0;
 
-    virtual std::string toString() = 0;
+    virtual std::string toString() const = 0;
 
     void sell();
 

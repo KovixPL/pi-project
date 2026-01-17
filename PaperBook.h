@@ -10,22 +10,25 @@ private:
 
 public:
     PaperBook(
-    int id,
-    std::string title,
-    std::string author,
-    float price,
-    int amount,
-    Genre genre,
-    int pageCount,
-    CoverType coverType,
-    bool hasIllustrations
-    ) : Product(id, title, author, genre, price, amount) {}
+        int id,
+        std::string title,
+        std::string author,
+        float price,
+        int amount,
+        Genre genre,
+        int pageCount,
+        CoverType coverType,
+        bool hasIllustrations
+    ) : Product(id, title, author, price, amount, genre),
+        pageCount(pageCount),
+        coverType(coverType),
+        hasIllustrations(hasIllustrations) {}
 
     ~PaperBook() {}
 
     void compare(const Product& p) override;
 
-    std::string toString() override;
+    std::string toString() const override;
 
     int getPageCount();
     CoverType getCoverType();
