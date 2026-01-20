@@ -9,19 +9,19 @@ Genre EnumConvert::stringToGenre(const std::string& strGenre) {
     if (strGenre == "horror") return Genre::horror;
     if (strGenre == "crime") return Genre::crime;
     if (strGenre == "romance") return Genre::romance;
-    throw std::runtime_error("ERROR: INCORRECT BOOK GENRE IN DATABASE.");
+    throw std::runtime_error("ERROR: INCORRECT BOOK GENRE.");
 }
 
 CoverType EnumConvert::stringToCoverType(const std::string& strCover) {
     if (strCover == "hardCover") return CoverType::hardCover;
     if (strCover == "paperBack") return CoverType::paperBack;
-    throw std::runtime_error("ERROR: INCORRECT BOOK COVER TYPE IN DATABASE.");
+    throw std::runtime_error("ERROR: INCORRECT BOOK COVER TYPE.");
 }
 
 Format EnumConvert::stringToFormat(const std::string& strFormat) {
     if (strFormat == "PDF") return Format::PDF;
     if (strFormat == "EPUB") return Format::EPUB;
-    throw std::runtime_error("ERROR: INCORRECT BOOK FORMAT IN DATABASE.");
+    throw std::runtime_error("ERROR: INCORRECT BOOK FORMAT.");
 }
 
 std::string EnumConvert::genreToString(const Genre& genre) {

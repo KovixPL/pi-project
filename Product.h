@@ -28,7 +28,11 @@ public:
 
     virtual std::string toString() const = 0;
 
-    void sell();
+    virtual void displayInfo() const = 0;
+
+    void sell(const int& amountToSell);
+
+    void restock(const int& restockAmount);
 
     void changePrice(const float& newPrice);
 

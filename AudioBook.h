@@ -34,10 +34,10 @@ public:
 
     std::string toString() const override;
 
+    void displayInfo() const override;
+
     float getLengthHours();
     bool getHasMultipleNarrators();
     bool getIsAiNarrated();
     bool getHasSoundEffects();
 };
-
-

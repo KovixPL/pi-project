@@ -30,10 +30,10 @@ public:
 
     std::string toString() const override;
 
+    void displayInfo() const override;
+
     int getPageCount();
     CoverType getCoverType();
     bool getHasIllustrations();
 
 };
-
-

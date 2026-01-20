@@ -4,13 +4,14 @@
 #include <stdexcept>
 #include <sstream>
 #include <string>
+#include <algorithm>
 
 #include "LibraryMenager.h"
 #include "AudioBook.h"
 #include "EBook.h"
 #include "PaperBook.h"
 #include "EnumConvert.h"
-#include "HFuncs.h"
+#include "Utils.h"
 
 std::vector<std::string> LibraryMenager::splitLine(const std::string& line, const char& delimiter) {
     std::vector<std::string> v;
@@ -128,11 +129,136 @@ LibraryMenager::LibraryMenager(const std::string& dbFile) {
         char bookType = bookInfo.front()[0];
         loadBookFromDb(bookType,bookInfo);
     }
+    db.close();
+}
+
+void LibraryMenager::searchBooksById(const int& id) {
+    int results = 0;
+    for (Product* p : products) {
+
+        if(p->getId() == id) {
+            results++;
+            p->displayInfo();
+        }
+    }
+    std::cout << "Liczba wynikow: " << results << std::endl;
+}
+
+void LibraryMenager::searchBooksByTitle(const std::string& title) {
+    int results = 0;
+    for (Product* p : products) {
+
+        if(p->getTitle() == title) {
+            results++;
+            p->displayInfo();
+        }
+    }
+    std::cout << "Liczba wynikow: " << results << std::endl;
+}
+
+void LibraryMenager::searchBooksByAuthor(const std::string& author) {
+    int results = 0;
+    for (Product* p : products) {
+
+        if(p->getAuthor() == author) {
+            results++;
+            p->displayInfo();
+        }
+    }
+    std::cout << "Liczba wynikow: " << results << std::endl;
+}
+
+void LibraryMenager::searchByPriceRange(const int& minPrice, const int& maxPrice) {
+    int results = 0;
+    for (Product* p : products) {
+
+        if(p->getPrice() > minPrice && p->getPrice() < maxPrice) {
+            results++;
+            p->displayInfo();
+        }
+    }
+    std::cout << "Liczba wynikow: " << results << std::endl;
+}
+
+void LibraryMenager::sellBookById(const int& id, const int& sellAmount) {
+    bool soldSomething = false;
+    bool insufficientAmount = false;
 
     for (Product* p : products) {
-        std::cout << p->toString() << std::endl;
+        if(p->getId() == id) {
+            if (p->getAmount() > 0) {
+                p->sell(sellAmount);
+                soldSomething = true;
+            } else insufficientAmount = true;
+        }
     }
+    if(insufficientAmount) {
+        std::cout << "BLAD: NIEWYSTARCZAJACA ILOSC KSIAZEK NA STANIE ABY WYKONAC OPERACJE" << std::endl;
+        return;
+    }
+    if(soldSomething) std::cout << "Operacja wykonana pomyslnie." << std::endl;
+}
 
-    db.close();
+void LibraryMenager::restockBookById(const int& id, const int& restockAmount) {
+    bool restockSuccessful = false;
+    for (Product* p : products) {
+        if(p->getId() == id) {
+            p->restock(restockAmount);
+            restockSuccessful = true;
+        }
+    }
+    if(restockSuccessful) std::cout << "Operacja wykonana pomyslnie." << std::endl;
+    else std::cout << "Operacja nie powiodla sie. Nie znaleziono ksiazki o podanym id" << std::endl;
+}
+
+
+void LibraryMenager::removeBookById(const int& id) {
+    int sizeBefore = products.size();
+    auto it = std::remove_if(products.begin(), products.end(), [&id](Product* p){
+        return p->getId() == id;
+    });
+    products.erase(it,products.end());
+
+    if(sizeBefore != products.size()) std::cout << "Operacja wykowania pomyslnie." << std::endl;
+    else std::cout << "Operacja nie powiodla sie. Nie znaleziono ksiazki o podanym id" << std::endl;
+}
+
+void LibraryMenager::changeBookPriceById(const int& id, const float& newPrice) {
+    bool success = false;
+    for (Product* p : products) {
+        if (p->getId() == id) {
+            p->changePrice(newPrice);
+            success = true;
+        }
+    }
+    if(success) std::cout << "Operacja wykonana pomyslnie" << std::endl;
+    else std::cout << "Operacja nie powiodla sie. Nie znaleziono ksiazki o podanym id" << std::endl;
+}
+
+int LibraryMenager::getAllBookCount() {
+    int bCount = 0;
+    for (Product* p : products) {
+        if(p->getAmount() > 0) bCount+= p->getAmount();
+    }
+    return bCount;
+}
+
+int LibraryMenager::getAllBookValue() {
+    int value = 0;
+    for (Product* p : products) {
+        value += p->getPrice();
+    }
+    return value;
+}
+
+void LibraryMenager::displayShortage() {
+    int results = 0;
+    for (Product* p : products) {
+        if (p->getAmount() < 5) {
+            p->displayInfo();
+            results++;
+        }
+    }
+    std::cout << "Ilosc wynikow: " << results << std::endl;
 }
 

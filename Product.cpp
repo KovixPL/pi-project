@@ -14,8 +14,13 @@ Product::Product(
     amount(amount),
     genre(genre) {}
 
-void Product::sell() {
-    amount--;
+void Product::sell(const int& amountToSell) {
+    amount -= amountToSell;
+    if (amount < 0) amount = 0;
+}
+
+void Product::restock(const int& restockAmount) {
+    amount += restockAmount;
 }
 
 void Product::changePrice(const float& newPrice) {

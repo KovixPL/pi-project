@@ -27,9 +27,9 @@ public:
 
     std::string toString() const override;
 
+    void displayInfo() const override;
+
     float getFileSizeMB();
     Format getFormat();
 
 };
-
-

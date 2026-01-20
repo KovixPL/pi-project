@@ -52,5 +52,25 @@ public:
         const bool& hasIllustrations
     );
 
+
+    void searchBooksById(const int& id);
+    void searchBooksByTitle(const std::string& title);
+    void searchBooksByAuthor(const std::string& author);
+    void searchByPriceRange(const int& minPrice, const int& maxPrice);
+
+    void sellBookById(const int& id, const int& sellAmount);
+
+    void restockBookById(const int& id, const int& restockAmount);
+
+    void removeBookById(const int& id);
+
+    void changeBookPriceById(const int& id, const float& newPrice);
+
+    int getAllBookCount();
+
+    int getAllBookValue();
+
+    void displayShortage();
+
     void saveAll();
 };

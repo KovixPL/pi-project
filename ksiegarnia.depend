@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1768676359 source:c:\users\mateusz\desktop\projects\ksiegarnia\product.cpp
+1768762365 source:c:\users\mateusz\desktop\projects\ksiegarnia\product.cpp
 	"Product.h"
 
-1768676313 c:\users\mateusz\desktop\projects\ksiegarnia\product.h
+1768762363 c:\users\mateusz\desktop\projects\ksiegarnia\product.h
 	<string>
 	"enum.h"
 
-1768678189 source:c:\users\mateusz\desktop\projects\ksiegarnia\main.cpp
+1768899219 source:c:\users\mateusz\desktop\projects\ksiegarnia\main.cpp
 	<stdexcept>
 	<iostream>
 	<windows.h>
@@ -15,56 +15,58 @@
 	"EBook.h"
 	"PaperBook.h"
 	"LibraryMenager.h"
+	"EnumConvert.h"
 
-1768677868 c:\users\mateusz\desktop\projects\ksiegarnia\audiobook.h
+1768742498 c:\users\mateusz\desktop\projects\ksiegarnia\audiobook.h
 	<string>
 	"product.h"
 
-1768677866 c:\users\mateusz\desktop\projects\ksiegarnia\ebook.h
+1768742844 c:\users\mateusz\desktop\projects\ksiegarnia\ebook.h
 	<string>
 	"product.h"
 
-1768677858 c:\users\mateusz\desktop\projects\ksiegarnia\paperbook.h
+1768742839 c:\users\mateusz\desktop\projects\ksiegarnia\paperbook.h
 	<string>
 	"product.h"
 
-1768678278 c:\users\mateusz\desktop\projects\ksiegarnia\librarymenager.h
+1768889236 c:\users\mateusz\desktop\projects\ksiegarnia\librarymenager.h
 	<vector>
 	<string>
 	"Product.h"
 
-1768679423 source:c:\users\mateusz\desktop\projects\ksiegarnia\librarymenager.cpp
+1768889304 source:c:\users\mateusz\desktop\projects\ksiegarnia\librarymenager.cpp
 	<fstream>
 	<iostream>
 	<vector>
 	<stdexcept>
 	<sstream>
 	<string>
+	<algorithm>
 	"LibraryMenager.h"
 	"AudioBook.h"
 	"EBook.h"
 	"PaperBook.h"
 	"EnumConvert.h"
-	"HFuncs.h"
+	"Utils.h"
 
-1768679815 source:c:\users\mateusz\desktop\projects\ksiegarnia\audiobook.cpp
+1768759174 source:c:\users\mateusz\desktop\projects\ksiegarnia\audiobook.cpp
 	"AudioBook.h"
 	"EnumConvert.h"
 	"Utils.h"
 
-1768679818 source:c:\users\mateusz\desktop\projects\ksiegarnia\ebook.cpp
+1768759184 source:c:\users\mateusz\desktop\projects\ksiegarnia\ebook.cpp
 	"EBook.h"
 	"EnumConvert.h"
 	"Utils.h"
 
-1768679812 source:c:\users\mateusz\desktop\projects\ksiegarnia\paperbook.cpp
+1768759164 source:c:\users\mateusz\desktop\projects\ksiegarnia\paperbook.cpp
 	"PaperBook.h"
 	"EnumConvert.h"
 	"Utils.h"
 
 1768670593 c:\users\mateusz\desktop\projects\ksiegarnia\enum.h
 
-1768675332 source:c:\users\mateusz\desktop\projects\ksiegarnia\enumconvert.cpp
+1768846137 source:c:\users\mateusz\desktop\projects\ksiegarnia\enumconvert.cpp
 	<stdexcept>
 	<iostream>
 	"EnumConvert.h"
@@ -81,8 +83,11 @@
 1768679144 source:c:\users\mateusz\desktop\projects\ksiegarnia\hfuncs.cpp
 	"HFuncs.h"
 
-1768679774 c:\users\mateusz\desktop\projects\ksiegarnia\utils.h
+1768738845 c:\users\mateusz\desktop\projects\ksiegarnia\utils.h
 	<iostream>
 	<sstream>
 	<iomanip>
+
+1768739164 source:c:\users\mateusz\desktop\projects\ksiegarnia\utils.cpp
+	"Utils.h"
 
