@@ -119,7 +119,8 @@ LibraryMenager::LibraryMenager(const std::string& dbFile) {
     std::ifstream db(dbFile);
 
     if (!db.is_open()) {
-        throw std::runtime_error("ERROR: DATABASE COULD NOT BE LOADED.");
+        std::ofstream stream("db.txt");
+        return;
     }
 
     std::string line;
@@ -189,6 +190,7 @@ void LibraryMenager::sellBookById(const int& id, const int& sellAmount) {
             if (p->getAmount() > 0) {
                 p->sell(sellAmount);
                 soldSomething = true;
+                if(!hasUnsavedChanges) hasUnsavedChanges = true;
             } else insufficientAmount = true;
         }
     }
@@ -197,6 +199,7 @@ void LibraryMenager::sellBookById(const int& id, const int& sellAmount) {
         return;
     }
     if(soldSomething) std::cout << "Operacja wykonana pomyslnie." << std::endl;
+    else std::cout << "Operacja nie powiodla sie. Nie znaleziono ksiazki o podanym id" << std::endl;
 }
 
 void LibraryMenager::restockBookById(const int& id, const int& restockAmount) {
@@ -205,9 +208,10 @@ void LibraryMenager::restockBookById(const int& id, const int& restockAmount) {
         if(p->getId() == id) {
             p->restock(restockAmount);
             restockSuccessful = true;
+            if(!hasUnsavedChanges) hasUnsavedChanges = true;
         }
     }
-    if(restockSuccessful) std::cout << "Operacja wykonana pomyslnie." << std::endl;
+    if(restockSuccessful) std::cout << "Operacja wykonana pomyœlnie." << std::endl;
     else std::cout << "Operacja nie powiodla sie. Nie znaleziono ksiazki o podanym id" << std::endl;
 }
 
@@ -219,7 +223,10 @@ void LibraryMenager::removeBookById(const int& id) {
     });
     products.erase(it,products.end());
 
-    if(sizeBefore != products.size()) std::cout << "Operacja wykowania pomyslnie." << std::endl;
+    if(sizeBefore != products.size()) {
+        std::cout << "Operacja wykonana pomyslnie." << std::endl;
+        if(!hasUnsavedChanges) hasUnsavedChanges = true;
+    }
     else std::cout << "Operacja nie powiodla sie. Nie znaleziono ksiazki o podanym id" << std::endl;
 }
 
@@ -231,7 +238,10 @@ void LibraryMenager::changeBookPriceById(const int& id, const float& newPrice) {
             success = true;
         }
     }
-    if(success) std::cout << "Operacja wykonana pomyslnie" << std::endl;
+    if(success) {
+        std::cout << "Operacja wykonana pomyslnie" << std::endl;
+        if(!hasUnsavedChanges) hasUnsavedChanges = true;
+    }
     else std::cout << "Operacja nie powiodla sie. Nie znaleziono ksiazki o podanym id" << std::endl;
 }
 
@@ -261,4 +271,44 @@ void LibraryMenager::displayShortage() {
     }
     std::cout << "Ilosc wynikow: " << results << std::endl;
 }
+
+void LibraryMenager::saveAll() {
+    if (hasUnsavedChanges) {
+
+        std::ofstream stream("db.txt");
+
+        std::sort(products.begin(), products.end(), [](Product* p1, Product* p2){
+            return p1->getId() < p2->getId();
+        });
+
+        for (Product* p : products) {
+            stream << p->toString() << std::endl;
+        }
+        hasUnsavedChanges = false;
+        std::cout << std::endl;
+        std::cout << "Dokonano zapisu" << std::endl;
+
+    } else {
+        std::cout << "Nie dokonano zmian, ktore mozna zapisac w bazie." << std::endl;
+    }
+}
+
+void LibraryMenager::setHasUnsavedChanges(bool unsavedChanges) {
+    hasUnsavedChanges = unsavedChanges;
+}
+
+bool LibraryMenager::getHasUnsavedChanges() {
+    return hasUnsavedChanges;
+}
+
+bool LibraryMenager::idAlreadExists(const int& id) {
+    for (Product* p : products) {
+        if (p->getId() == id) {
+            return true;
+        }
+    }
+    return false;
+}
+
+
 

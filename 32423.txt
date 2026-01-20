@@ -1,0 +1,100 @@
+A;1;Cień Przeszłości;Jan Kowalski;39.99;150;fantasy;12.5;false;false;true
+E;2;Cień Przeszłości;Jan Kowalski;25.00;999;fantasy;4.5;EPUB
+P;3;Cień Przeszłości;Jan Kowalski;45.00;30;fantasy;420;hardCover;true
+A;4;Krwawe Diamenty;Anna Nowak;34.50;80;crime;8.2;true;false;false
+E;5;Krwawe Diamenty;Anna Nowak;19.99;500;crime;2.1;PDF
+P;6;Krwawe Diamenty;Anna Nowak;39.00;45;crime;350;paperBack;false
+A;7;Mgła nad Warszawą;Marek Kwiatkowski;29.99;120;horror;10.0;false;false;true
+E;8;Mgła nad Warszawą;Marek Kwiatkowski;15.00;1000;horror;5.2;EPUB
+P;9;Mgła nad Warszawą;Marek Kwiatkowski;32.00;15;horror;280;hardCover;false
+A;10;Serce z Lodu;Maria Wiśniewska;42.00;60;romance;11.4;true;false;false
+E;11;Serce z Lodu;Maria Wiśniewska;22.50;400;romance;3.8;EPUB
+P;12;Serce z Lodu;Maria Wiśniewska;38.00;25;romance;400;paperBack;false
+A;13;Galaktyczny Pył;Piotr Zieliński;45.00;100;scienceFiction;15.3;false;false;true
+E;14;Galaktyczny Pył;Piotr Zieliński;28.00;600;scienceFiction;8.5;PDF
+P;15;Galaktyczny Pył;Piotr Zieliński;55.00;20;scienceFiction;520;hardCover;true
+A;16;Ostatni Świadek;Ewa Mazur;33.00;90;crime;9.5;false;false;false
+E;17;Ostatni Świadek;Ewa Mazur;18.00;300;crime;2.5;EPUB
+P;18;Ostatni Świadek;Ewa Mazur;35.00;55;crime;310;paperBack;false
+A;19;Kod Nieśmiertelności;Tomasz Lew;49.90;200;scienceFiction;14.0;true;false;true
+E;20;Kod Nieśmiertelności;Tomasz Lew;29.00;800;scienceFiction;6.0;EPUB
+P;21;Kod Nieśmiertelności;Tomasz Lew;48.00;40;scienceFiction;450;hardCover;true
+A;22;Zemsta Czarownicy;Beata Bąk;37.00;110;fantasy;13.2;false;false;true
+E;23;Zemsta Czarownicy;Beata Bąk;24.00;450;fantasy;4.1;PDF
+P;24;Zemsta Czarownicy;Beata Bąk;42.00;10;fantasy;380;hardCover;true
+E;25;Tajemnica Dworu;Adam Mickiewicz;12.99;100;horror;3.2;EPUB
+P;26;Tajemnica Dworu;Adam Mickiewicz;29.99;50;horror;210;paperBack;false
+E;27;Wielka Ucieczka;Katarzyna Bond;21.00;200;crime;2.9;PDF
+P;28;Wielka Ucieczka;Katarzyna Bond;34.00;80;crime;330;paperBack;false
+E;29;Miłość w Paryżu;Alicja Cudna;19.50;350;romance;1.8;EPUB
+P;30;Miłość w Paryżu;Alicja Cudna;31.00;65;romance;290;paperBack;false
+E;31;Robot 2.0;Stanisław Lemur;26.00;150;scienceFiction;5.5;EPUB
+P;32;Robot 2.0;Stanisław Lemur;44.00;25;scienceFiction;360;hardCover;true
+E;33;Nocny Łowca;Robert Mróz;23.00;400;crime;3.0;PDF
+P;34;Nocny Łowca;Robert Mróz;36.00;95;crime;410;paperBack;false
+E;35;Smocze Jajo;Andrzej Strzelec;27.50;180;fantasy;6.2;EPUB
+P;36;Smocze Jajo;Andrzej Strzelec;49.00;12;fantasy;500;hardCover;true
+E;37;Mroczne Echo;Hanna Lis;18.99;220;horror;4.4;PDF
+P;38;Mroczne Echo;Hanna Lis;33.50;30;horror;275;paperBack;false
+E;39;Szept Wiatru;Zofia Nałkowska;14.00;100;romance;2.2;EPUB
+P;40;Szept Wiatru;Zofia Nałkowska;28.00;40;romance;250;paperBack;false
+P;41;Zbrodnia na Przedmieściu;Stefan Żeromski;39.99;20;crime;320;hardCover;false
+P;42;Władca Czasu;Kamil Ślimak;55.00;15;fantasy;600;hardCover;true
+P;43;Bezdroża Kosmosu;Jerzy Pilot;42.50;35;scienceFiction;380;paperBack;false
+P;44;Duchy Przeszłości;Marta Lis;31.00;50;horror;290;paperBack;false
+P;45;Letnia Sukienka;Monika Szwaja;29.00;75;romance;315;paperBack;false
+A;46;Głos z Otchłani;Artur Conan;36.00;100;horror;9.2;false;true;true
+A;47;Cyberpunk 2088;Viktor Orlov;48.00;200;scienceFiction;16.5;true;false;true
+A;48;Złoty Klucz;Irena Jurgielewicz;25.00;50;fantasy;7.0;false;false;false
+A;49;Cisza przed Burzą;Paweł Jasienica;32.50;90;crime;11.2;false;false;true
+A;50;Róża i Cierń;Barbara Cartland;27.00;140;romance;8.5;false;false;false
+E;51;Sztuczna Inteligencja;Michał Heller;30.00;500;scienceFiction;10.5;PDF
+E;52;Morderstwo w Pociągu;Agata Krystyna;22.00;300;crime;3.1;EPUB
+E;53;Wampirze Gniazdo;Bram Stoker;19.00;150;horror;4.8;EPUB
+E;54;Elfia Pieśń;J.R.R. Tolkienowski;28.50;400;fantasy;5.9;PDF
+E;55;Pierwszy Pocałunek;Danielle Steel;20.00;600;romance;2.4;EPUB
+P;56;Historia Jednej Miłości;Janusz Wiśniewski;34.90;100;romance;340;paperBack;false
+P;57;Czarna Dziura;Stephen Hawking;59.00;45;scienceFiction;280;hardCover;true
+P;58;Złe Miejsce;Stephen King;46.00;120;horror;550;hardCover;false
+P;59;Miecz Przeznaczenia;Andrzej Sapkowski;52.00;80;fantasy;420;hardCover;true
+P;60;Zaginięcie;Remigiusz Mróz;38.00;200;crime;480;paperBack;false
+A;61;Zew Cthulhu;H.P. Lovecraft;29.90;150;horror;6.5;false;false;true
+A;62;Fundacja;Isaac Asimov;45.00;100;scienceFiction;18.2;true;false;true
+A;63;Wiedźmin: Ostatnie Życzenie;Andrzej Sapkowski;39.99;300;fantasy;11.0;true;false;true
+A;64;Chłopcy z Placu Broni;Ferenc Molnar;22.50;180;romance;5.5;false;false;false
+A;65;Sherlock Holmes: Studium;Arthur Doyle;28.00;200;crime;7.8;false;false;false
+E;66;Marsjanin;Andy Weir;25.90;1000;scienceFiction;4.2;EPUB
+E;67;Lśnienie;Stephen King;24.00;500;horror;5.1;PDF
+E;68;Hobbit;J.R.R. Tolkien;27.00;800;fantasy;6.5;EPUB
+E;69;Kod Leonarda;Dan Brown;23.50;600;crime;4.0;PDF
+E;70;Duma i Uprzedzenie;Jane Austen;15.00;400;romance;2.8;EPUB
+P;71;Diuna;Frank Herbert;65.00;50;scienceFiction;700;hardCover;true
+P;72;It;Stephen King;55.00;30;horror;1100;hardCover;false
+P;73;Gra o Tron;George Martin;58.00;40;fantasy;850;hardCover;true
+P;74;Sokół Maltański;Dashiell Hammett;32.00;90;crime;250;paperBack;false
+P;75;Wielki Gatsby;F. Scott Fitzgerald;29.00;110;romance;180;paperBack;false
+A;76;Solaris;Stanisław Lem;35.00;120;scienceFiction;9.0;false;false;true
+A;77;Frankenstein;Mary Shelley;26.00;80;horror;8.4;false;true;false
+A;78;Opowieści z Narnii;C.S. Lewis;31.00;250;fantasy;7.5;true;false;true
+A;79;I nie było już nikogo;Agatha Christie;29.00;150;crime;6.2;false;false;false
+A;80;Romeo i Julia;William Szekspir;19.90;100;romance;3.5;true;false;true
+E;81;Neuromancer;William Gibson;26.50;300;scienceFiction;3.5;EPUB
+E;82;Dracula;Bram Stoker;18.00;400;horror;4.2;PDF
+E;83;Eragon;Christopher Paolini;24.00;350;fantasy;5.5;EPUB
+E;84;Millennium;Stieg Larsson;28.00;500;crime;5.0;PDF
+E;85;P.S. Kocham Cię;Cecelia Ahern;19.00;450;romance;2.5;EPUB
+P;86;Ubik;Philip Dick;41.00;35;scienceFiction;260;paperBack;false
+P;87;Egzorcysta;William Blatty;39.00;45;horror;340;hardCover;false
+P;88;Niekończąca się opowieść;Michael Ende;49.00;25;fantasy;450;hardCover;true
+P;89;Anioły i Demony;Dan Brown;37.00;100;crime;520;paperBack;false
+P;90;Pamiętnik;Nicholas Sparks;28.00;120;romance;220;paperBack;false
+A;91;Lód;Jacek Dukaj;55.00;60;scienceFiction;35.5;false;false;true
+A;92;Wywiad z Wampirem;Anne Rice;34.00;110;horror;12.4;false;false;false
+A;93;Amerykańscy Bogowie;Neil Gaiman;42.00;90;fantasy;18.0;true;false;true
+A;94;Mężczyźni którzy nienawidzą kobiet;Stieg Larsson;38.00;130;crime;15.5;false;false;false
+A;95;Wichrowe Wzgórza;Emily Bronte;25.00;80;romance;10.2;false;false;false
+E;96;Paradyzja;Janusz Zajdel;21.00;200;scienceFiction;2.9;EPUB
+E;97;Koszmar z Ulicy Wiązów;Wes Craven;17.50;150;horror;3.2;PDF
+E;98;Harry Potter i Kamień Filozoficzny;J.K. Rowling;29.99;1000;fantasy;7.2;EPUB
+E;99;Dziewczyna z Tatuażem;Stieg Larsson;22.00;500;crime;4.5;PDF
+E;100;Zanim się pojawiłeś;Jojo Moyes;19.50;400;romance;3.0;EPUB

@@ -20,3 +20,17 @@ std::string Utils::getFormalCoverType(const std::string& coverType) {
     else if (coverType == "paperBack") return "Miekka";
     return "NULL";
 }
+
+std::string Utils::boolToPolish(bool b) {
+    switch(b) {
+    case true:
+        return "TAK";
+    default: return "NIE";
+    }
+    return "NIE";
+}
+
+std::string Utils::engTextBoolToPolish(std::string engBool) {
+    if (engBool == "true") return "TAK";
+    else return "NIE";
+}

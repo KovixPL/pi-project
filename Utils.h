@@ -9,4 +9,8 @@ namespace Utils {
     std::string getFormalBookType(const char& bookType);
 
     std::string getFormalCoverType(const std::string& coverType);
+
+    std::string boolToPolish(bool b);
+
+    std::string engTextBoolToPolish(std::string engBool);
 }

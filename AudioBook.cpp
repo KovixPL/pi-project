@@ -26,7 +26,7 @@ std::string AudioBook::toString() const {
     std::string ai = isAiNarrated ? "true" : "false";
     std::string sound = hasSoundEffects ? "true" : "false";
 
-    return "A;" + std::to_string(id) + ";"
+    return u8"A;" + std::to_string(id) + ";"
     + title + ";"
     + author + ";"
     + Utils::getFloatWithPrecision(price, 2) + ";"
@@ -56,9 +56,16 @@ void AudioBook::displayInfo() const {
     std::getline(ss, amount, ';');
     std::getline(ss, genre, ';');
     std::getline(ss, lengthHours, ';');
+
+
+
     std::getline(ss, hasMultipleNarrators, ';');
     std::getline(ss, isAiNarrated, ';');
     std::getline(ss, hasSoundEffects);
+
+    std::string narratorsPolish = Utils::engTextBoolToPolish(hasMultipleNarrators);
+    std::string aiPolish = Utils::engTextBoolToPolish(isAiNarrated);
+    std::string soundPolish = Utils::engTextBoolToPolish(hasSoundEffects);
 
     std::cout << std::endl;
     std::cout << "------------------------------" << std::endl;
@@ -70,8 +77,8 @@ void AudioBook::displayInfo() const {
     std::cout << "Ilosc: " << amount << std::endl;
     std::cout << "Gatunek: " << genre << std::endl;
     std::cout << "Dlugosc w godzinach: " << lengthHours << std::endl;
-    std::cout << "Ma wielu narratorow: " << hasMultipleNarrators << std::endl;
-    std::cout << "Ma narracje AI: " << isAiNarrated << std::endl;
-    std::cout << "Ma efekty dzwiekowe: " << hasSoundEffects << std::endl;
+    std::cout << "Ma wielu narratorow: " << narratorsPolish << std::endl;
+    std::cout << "Ma narracje AI: " << aiPolish << std::endl;
+    std::cout << "Ma efekty dzwiekowe: " << soundPolish << std::endl;
     std::cout << "------------------------------" << std::endl;
 }

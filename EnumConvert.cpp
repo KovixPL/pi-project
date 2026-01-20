@@ -9,19 +9,19 @@ Genre EnumConvert::stringToGenre(const std::string& strGenre) {
     if (strGenre == "horror") return Genre::horror;
     if (strGenre == "crime") return Genre::crime;
     if (strGenre == "romance") return Genre::romance;
-    throw std::runtime_error("ERROR: INCORRECT BOOK GENRE.");
+    throw std::runtime_error("BLAD: Nieprawidlowa nazwa gatunku.");
 }
 
 CoverType EnumConvert::stringToCoverType(const std::string& strCover) {
     if (strCover == "hardCover") return CoverType::hardCover;
     if (strCover == "paperBack") return CoverType::paperBack;
-    throw std::runtime_error("ERROR: INCORRECT BOOK COVER TYPE.");
+    throw std::runtime_error("BLAD: Nieprawidlowa nazwa ok³adki.");
 }
 
 Format EnumConvert::stringToFormat(const std::string& strFormat) {
     if (strFormat == "PDF") return Format::PDF;
     if (strFormat == "EPUB") return Format::EPUB;
-    throw std::runtime_error("ERROR: INCORRECT BOOK FORMAT.");
+    throw std::runtime_error("BLAD: Nieprawidlowy format.");
 }
 
 std::string EnumConvert::genreToString(const Genre& genre) {
@@ -42,7 +42,7 @@ std::string EnumConvert::genreToString(const Genre& genre) {
         return "scienceFiction";
     }
     std::cout << genre << std::endl;
-    throw std::runtime_error("ERROR: INCORRECT GENRE.");
+    throw std::runtime_error("BLAD: Nieprawidlowy gatunek.");
 }
 
 std::string EnumConvert::coverTypeToString(const CoverType& coverType) {
@@ -53,7 +53,7 @@ std::string EnumConvert::coverTypeToString(const CoverType& coverType) {
     case CoverType::paperBack:
         return "paperBack";
     }
-    throw std::runtime_error("ERROR: INCORRECT COVER TYPE.");
+    throw std::runtime_error("BLAD: Nieprawidlowa ok³adka.");
 }
 
 std::string EnumConvert::formatToString(const Format& format) {
@@ -64,7 +64,7 @@ std::string EnumConvert::formatToString(const Format& format) {
     case Format::PDF:
         return "PDF";
     }
-    throw std::runtime_error("ERROR: INCORRECT FORMAT.");
+    throw std::runtime_error("BLAD: Nieprawidlowy format.");
 }
 
 

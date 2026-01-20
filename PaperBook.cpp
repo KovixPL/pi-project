@@ -52,6 +52,8 @@ void PaperBook::displayInfo() const {
     std::getline(ss, coverType, ';');
     std::getline(ss, hasIllustrations, ';');
 
+    std::string illustrationsPolish = Utils::engTextBoolToPolish(hasIllustrations);
+
     std::cout << std::endl;
     std::cout << "------------------------------" << std::endl;
     std::cout << "Typ: " << bookType << std::endl;
@@ -63,7 +65,7 @@ void PaperBook::displayInfo() const {
     std::cout << "Gatunek: " << genre << std::endl;
     std::cout << "Ilosc stron: " << pageCount << std::endl;
     std::cout << "Typ okladki: " << Utils::getFormalCoverType(coverType) << std::endl;
-    std::cout << "Ma ilustracje: " << hasIllustrations << std::endl;
+    std::cout << "Ma ilustracje: " << illustrationsPolish << std::endl;
     std::cout << "------------------------------" << std::endl;
 }
 

@@ -129,7 +129,7 @@ void handleBookAddition(LibraryMenager& menager) {
     std::cin.ignore(1000, '\n');
 
     if (bookType != "AudioBook" && bookType != "EBook" && bookType != "Papierowa") {
-        std::cout << "Podano nieprawidlowy typ ksiazki" << std::endl;
+        std::cout << "BLAD: Podano nieprawidlowy typ ksiazki." << std::endl;
         return;
     }
 
@@ -144,6 +144,11 @@ void handleBookAddition(LibraryMenager& menager) {
     std::cout << ">";
     std::cin >> id;
     std::cin.ignore(1000, '\n');
+
+    if (menager.idAlreadExists(id)) {
+        std::cout << "BLAD: Ksiazka o podanym id juz istnieje w bazie." << std::endl;
+        return;
+    }
 
     std::cout << "Podaj tytul" << std::endl;
     std::cout << ">";
@@ -185,30 +190,31 @@ void handleBookAddition(LibraryMenager& menager) {
         std::cin.ignore(1000, '\n');
 
         std::string narrators;
-        std::cout << "Ma wielu narratorow? (\"true\" lub \"false\")" << std::endl;
+        std::cout << "Ma wielu narratorow? (T/N)" << std::endl;
         std::cout << ">";
         std::cin >> narrators;
         std::cin.ignore(1000, '\n');
 
-        hasMultipleNarrators = narrators == "true" ? true : false;
+        hasMultipleNarrators = narrators == "T" ? true : false;
 
         std::string aiNarration;
-        std::cout << "Ma narracje AI? (\"true\" lub \"false\")" << std::endl;
+        std::cout << "Ma narracje AI? (T/N)" << std::endl;
         std::cout << ">";
         std::cin >> aiNarration;
         std::cin.ignore(1000, '\n');
 
-        isAiNarrated = aiNarration == "true" ? true : false;
+        isAiNarrated = aiNarration == "T" ? true : false;
 
         std::string soundEffects;
-        std::cout << "Ma efekty dzwiekowe? (\"true\" lub \"false\")" << std::endl;
+        std::cout << "Ma efekty dzwiekowe? (T/N)" << std::endl;
         std::cout << ">";
         std::cin >> soundEffects;
         std::cin.ignore(1000, '\n');
 
-        isAiNarrated = soundEffects == "true" ? true : false;
+        isAiNarrated = soundEffects == "T" ? true : false;
 
         menager.addAudioBook(id,title,author,price,amount,genre,lengthHours,hasMultipleNarrators,isAiNarrated,hasSoundEffects);
+        if(!menager.getHasUnsavedChanges()) menager.setHasUnsavedChanges(true);
         return;
 
     } else if (bookType == "EBook") {
@@ -230,6 +236,8 @@ void handleBookAddition(LibraryMenager& menager) {
         format = EnumConvert::stringToFormat(strFormat);
 
         menager.addEBook(id,title,author,price,amount,genre,fileSizeMB,format);
+        if(!menager.getHasUnsavedChanges()) menager.setHasUnsavedChanges(true);
+
         return;
     } else if (bookType == "Papierowa") {
         int pageCount;
@@ -242,7 +250,7 @@ void handleBookAddition(LibraryMenager& menager) {
         std::cin.ignore(1000, '\n');
 
         std::string strCover;
-        std::cout << "Podaj typ okladki (\"Twarda\", \"Miekka\")" << std::endl;
+        std::cout << "Podaj typ okladki (Twarda/Miekka)" << std::endl;
         std::cout << ">";
         std::cin >> strCover;
         std::cin.ignore(1000, '\n');
@@ -252,13 +260,14 @@ void handleBookAddition(LibraryMenager& menager) {
         coverType = EnumConvert::stringToCoverType(strCover);
 
         std::string illus;
-        std::cout << "Ma ilustracje? (\"true\" lub \"false\"))" << std::endl;
+        std::cout << "Ma ilustracje? (T/N)" << std::endl;
         std::cout << ">";
         std::cin >> illus;
         std::cin.ignore(1000, '\n');
 
-        hasIllustrations = illus == "true" ? true : false;
+        hasIllustrations = illus == "T" ? true : false;
         menager.addPaperBook(id,title,author,price,amount,genre,pageCount,coverType,hasIllustrations);
+        if(!menager.getHasUnsavedChanges()) menager.setHasUnsavedChanges(true);
     }
 }
 
@@ -376,13 +385,14 @@ void handleStatsMenu(LibraryMenager& menager) {
 }
 
 void handleDataBaseSave(LibraryMenager& menager) {
+    menager.saveAll();
 }
 
 int main()
 {
     try {
-        SetConsoleOutputCP(65001); // Ustawia wyjscie konsoli na UTF8
-        SetConsoleCP(65001);       // Ustawia wejscie konsoli na UTF8
+        SetConsoleOutputCP(65001);
+        SetConsoleCP(65001);
         LibraryMenager menager(DB_FILE_PATH);
 
         while(true) {
@@ -392,17 +402,34 @@ int main()
 
             switch (uiChoice) {
             case '1':
-                handleSearchMenu(menager);
-                break;
+                try {
+                    handleSearchMenu(menager);
+                    break;
+                } catch(std::runtime_error& e) {
+                    std::cout << e.what() << std::endl;
+                }
+
             case '2':
-                handleManagementMenu(menager);
-                break;
+                try {
+                    handleManagementMenu(menager);
+                    break;
+                } catch(std::runtime_error& e) {
+                    std::cout << e.what() << std::endl;
+                }
             case '3':
-                handleStatsMenu(menager);
-                break;
+                try {
+                    handleStatsMenu(menager);
+                    break;
+                } catch(std::runtime_error& e) {
+                    std::cout << e.what() << std::endl;
+                }
             case '4':
-                handleDataBaseSave(menager);
-                break;
+                try {
+                    handleDataBaseSave(menager);
+                    break;
+                } catch(std::runtime_error& e) {
+                    std::cout << e.what() << std::endl;
+                }
             }
         }
 

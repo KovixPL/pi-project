@@ -6,10 +6,9 @@
 class LibraryMenager {
 private:
     std::vector<Product*> products;
-
-public:
     bool hasUnsavedChanges = false;
 
+public:
     std::vector<std::string> splitLine(const std::string& line, const char& delimiter);
 
     LibraryMenager(const std::string& dbFile);
@@ -73,4 +72,10 @@ public:
     void displayShortage();
 
     void saveAll();
+
+    void setHasUnsavedChanges(bool unsavedChanges);
+
+    bool getHasUnsavedChanges();
+
+    bool idAlreadExists(const int& id);
 };
