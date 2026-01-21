@@ -173,7 +173,7 @@ void LibraryMenager::searchByPriceRange(const int& minPrice, const int& maxPrice
     int results = 0;
     for (Product* p : products) {
 
-        if(p->getPrice() > minPrice && p->getPrice() < maxPrice) {
+        if(p->getPrice() >= minPrice && p->getPrice() <= maxPrice) {
             results++;
             p->displayInfo();
         }
@@ -221,13 +221,17 @@ void LibraryMenager::removeBookById(const int& id) {
     auto it = std::remove_if(products.begin(), products.end(), [&id](Product* p){
         return p->getId() == id;
     });
-    products.erase(it,products.end());
 
-    if(sizeBefore != products.size()) {
-        std::cout << "Operacja wykonana pomyslnie." << std::endl;
+    if (it != products.end()) {
+        delete *it;
+        products.erase(it);
+
         if(!hasUnsavedChanges) hasUnsavedChanges = true;
+
+        std::cout << "Operacja wykonana pomyslnie." << std::endl;
+    } else {
+        std::cout << "Operacja nie powiodla sie. Nie znaleziono ksiazki o podanym id" << std::endl;
     }
-    else std::cout << "Operacja nie powiodla sie. Nie znaleziono ksiazki o podanym id" << std::endl;
 }
 
 void LibraryMenager::changeBookPriceById(const int& id, const float& newPrice) {
@@ -308,6 +312,16 @@ bool LibraryMenager::idAlreadExists(const int& id) {
         }
     }
     return false;
+}
+
+void LibraryMenager::displayAll() {
+    int results = 0;
+    for (Product* p : products) {
+        p->displayInfo();
+        results++;
+    }
+    std::cout << std::endl;
+    std::cout << "Liczba wynikow: " << results << std::endl;
 }
 
 

@@ -12,3 +12,4 @@ namespace EnumConvert {
     std::string coverTypeToString(const CoverType& coverType);
     std::string formatToString(const Format& format);
 }
+

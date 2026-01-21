@@ -17,3 +17,10 @@ enum Format {
     PDF,
     EPUB
 };
+
+enum SearchCategory {
+    ID,
+    TITLE,
+    AUTHOR,
+    PRICE_RANGE
+};

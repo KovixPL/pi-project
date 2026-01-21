@@ -24,8 +24,6 @@ public:
 
     virtual ~Product() {}
 
-    virtual void compare(const Product& p) = 0;
-
     virtual std::string toString() const = 0;
 
     virtual void displayInfo() const = 0;

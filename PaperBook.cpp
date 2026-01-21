@@ -2,9 +2,6 @@
 #include "EnumConvert.h"
 #include "Utils.h"
 
-void PaperBook::compare(const Product& p) {
-}
-
 int PaperBook::getPageCount() {
     return pageCount;
 }

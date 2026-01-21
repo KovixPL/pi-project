@@ -26,8 +26,6 @@ public:
 
     ~PaperBook() {}
 
-    void compare(const Product& p) override;
-
     std::string toString() const override;
 
     void displayInfo() const override;

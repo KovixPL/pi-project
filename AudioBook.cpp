@@ -2,9 +2,6 @@
 #include "EnumConvert.h"
 #include "Utils.h"
 
-void AudioBook::compare(const Product& p) {
-}
-
 float AudioBook::getLengthHours() {
     return lengthHours;
 }

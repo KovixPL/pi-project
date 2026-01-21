@@ -51,7 +51,6 @@ public:
         const bool& hasIllustrations
     );
 
-
     void searchBooksById(const int& id);
     void searchBooksByTitle(const std::string& title);
     void searchBooksByAuthor(const std::string& author);
@@ -72,10 +71,12 @@ public:
     void displayShortage();
 
     void saveAll();
+    void displayAll();
 
     void setHasUnsavedChanges(bool unsavedChanges);
 
     bool getHasUnsavedChanges();
 
     bool idAlreadExists(const int& id);
+
 };

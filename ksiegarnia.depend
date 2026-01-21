@@ -2,11 +2,11 @@
 1768762365 source:c:\users\mateusz\desktop\projects\ksiegarnia\product.cpp
 	"Product.h"
 
-1768762363 c:\users\mateusz\desktop\projects\ksiegarnia\product.h
+1768975380 c:\users\mateusz\desktop\projects\ksiegarnia\product.h
 	<string>
 	"enum.h"
 
-1768935690 source:c:\users\mateusz\desktop\projects\ksiegarnia\main.cpp
+1768975093 source:c:\users\mateusz\desktop\projects\ksiegarnia\main.cpp
 	<stdexcept>
 	<iostream>
 	<windows.h>
@@ -17,24 +17,24 @@
 	"LibraryMenager.h"
 	"EnumConvert.h"
 
-1768742498 c:\users\mateusz\desktop\projects\ksiegarnia\audiobook.h
+1768975413 c:\users\mateusz\desktop\projects\ksiegarnia\audiobook.h
 	<string>
 	"product.h"
 
-1768742844 c:\users\mateusz\desktop\projects\ksiegarnia\ebook.h
+1768975420 c:\users\mateusz\desktop\projects\ksiegarnia\ebook.h
 	<string>
 	"product.h"
 
-1768742839 c:\users\mateusz\desktop\projects\ksiegarnia\paperbook.h
+1768975428 c:\users\mateusz\desktop\projects\ksiegarnia\paperbook.h
 	<string>
 	"product.h"
 
-1768935563 c:\users\mateusz\desktop\projects\ksiegarnia\librarymenager.h
+1768974390 c:\users\mateusz\desktop\projects\ksiegarnia\librarymenager.h
 	<vector>
 	<string>
 	"Product.h"
 
-1768935626 source:c:\users\mateusz\desktop\projects\ksiegarnia\librarymenager.cpp
+1768974553 source:c:\users\mateusz\desktop\projects\ksiegarnia\librarymenager.cpp
 	<fstream>
 	<iostream>
 	<vector>
@@ -64,14 +64,14 @@
 	"EnumConvert.h"
 	"Utils.h"
 
-1768670593 c:\users\mateusz\desktop\projects\ksiegarnia\enum.h
+1768971187 c:\users\mateusz\desktop\projects\ksiegarnia\enum.h
 
-1768933668 source:c:\users\mateusz\desktop\projects\ksiegarnia\enumconvert.cpp
+1768973931 source:c:\users\mateusz\desktop\projects\ksiegarnia\enumconvert.cpp
 	<stdexcept>
 	<iostream>
 	"EnumConvert.h"
 
-1768672257 c:\users\mateusz\desktop\projects\ksiegarnia\enumconvert.h
+1768973924 c:\users\mateusz\desktop\projects\ksiegarnia\enumconvert.h
 	<string>
 	"enum.h"
 

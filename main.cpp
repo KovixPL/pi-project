@@ -20,7 +20,8 @@ void displayMainMenu() {
     std::cout << "1: Wyszukiwanie" << std::endl;
     std::cout << "2: Zarzadzanie stanem" << std::endl;
     std::cout << "3: Raporty" << std::endl;
-    std::cout << "4: Zapisz aktualny stan" << std::endl;
+    std::cout << "4: Wyswietl dane wszystkich ksiazkek" << std::endl;
+    std::cout << "5: Zapisz aktualny stan do bazy" << std::endl;
 
     std::cout << ">";
 }
@@ -384,6 +385,10 @@ void handleStatsMenu(LibraryMenager& menager) {
     }
 }
 
+void handleBookDisplay(LibraryMenager& menager) {
+    menager.displayAll();
+}
+
 void handleDataBaseSave(LibraryMenager& menager) {
     menager.saveAll();
 }
@@ -404,35 +409,41 @@ int main()
             case '1':
                 try {
                     handleSearchMenu(menager);
-                    break;
                 } catch(std::runtime_error& e) {
                     std::cout << e.what() << std::endl;
                 }
-
+                break;
             case '2':
                 try {
                     handleManagementMenu(menager);
-                    break;
                 } catch(std::runtime_error& e) {
                     std::cout << e.what() << std::endl;
                 }
+                break;
             case '3':
                 try {
                     handleStatsMenu(menager);
-                    break;
                 } catch(std::runtime_error& e) {
                     std::cout << e.what() << std::endl;
                 }
+                break;
             case '4':
+
+                try {
+                    handleBookDisplay(menager);
+                } catch(std::runtime_error& e) {
+                    std::cout << e.what() << std::endl;
+                }
+                break;
+            case '5':
                 try {
                     handleDataBaseSave(menager);
-                    break;
                 } catch(std::runtime_error& e) {
                     std::cout << e.what() << std::endl;
                 }
+                break;
             }
         }
-
     } catch (std::runtime_error& e) {
         std::cout << e.what() << std::endl;
     }

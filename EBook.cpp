@@ -2,9 +2,6 @@
 #include "EnumConvert.h"
 #include "Utils.h"
 
-void EBook::compare(const Product& p) {
-}
-
 float EBook::getFileSizeMB() {
     return fileSizeMB;
 }
